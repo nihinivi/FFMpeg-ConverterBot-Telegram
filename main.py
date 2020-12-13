@@ -67,7 +67,8 @@ async def progressbar(current, total, query, startedon, dlorup):
     current_formatted = await format_bytes(current)
     total_formatted = await format_bytes(total)
     speed_formatted = await format_bytes(speed)
-    await query.edit_message_text(
+    if int(diff)%5==0:
+        await query.edit_message_text(
         "{} The File\nProgress: {}/{}  {}\nPercentage: {}".format(
             dlorup, current_formatted, total_formatted, speed_formatted + "/s", current_percent+"%")
     )
