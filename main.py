@@ -110,7 +110,7 @@ async def callbacks(client, query):
     while True:
         newtxt = converter.progress
         if oldtxt != newtxt:
-            await asyncio.sleep(2)
+            await asyncio.sleep(5)
             if newtxt is not None:
                 await query.edit_message_text(newtxt)
             oldtxt = newtxt
